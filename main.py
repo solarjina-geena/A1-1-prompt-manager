@@ -259,4 +259,28 @@ while True:
         break
     else:
         print("올바른 메뉴 번호를 입력하세요.")
-        
+def search_prompts():
+    if not prompts:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    keyword = input_non_empty("검색어를 입력하세요: ").lower()
+    results = []
+
+    for prompt in prompts:
+        title = prompt["title"].lower()
+        content = prompt["content"].lower()
+        category = prompt["category"].lower()
+
+        if keyword in title or keyword in content or keyword in category:
+            results.append(prompt)
+
+    if not results:
+        print("검색 결과가 없습니다.")
+        return
+
+    print("\n=== 검색 결과 ===")
+    for i, prompt in enumerate(results, start=1):
+        star = "⭐" if prompt["favorite"] else ""
+        print(f"{i}. [{prompt['category']}] {prompt['title']} {star}")
+                
