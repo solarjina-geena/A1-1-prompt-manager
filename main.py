@@ -308,4 +308,28 @@ def search_prompts():
     print(f"카테고리: {prompt['category']}")
     print(f"내용: {prompt['content']}")
     print(f"즐겨찾기: {'예' if prompt['favorite'] else '아니오'}")
-                
+    def toggle_favorite():
+    if not prompts:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    show_list()
+    choice = input("즐겨찾기 추가/해제할 번호를 입력하세요: ").strip()
+
+    if not choice.isdigit():
+        print("숫자를 입력해주세요.")
+        return
+
+    index = int(choice) - 1
+
+    if index < 0 or index >= len(prompts):
+        print("올바른 번호를 입력하세요.")
+        return
+
+    prompts[index]["favorite"] = not prompts[index]["favorite"]
+
+    if prompts[index]["favorite"]:
+        print(f"'{prompts[index]['title']}'이(가) 즐겨찾기에 추가되었습니다.")
+    else:
+        print(f"'{prompts[index]['title']}'의 즐겨찾기가 해제되었습니다.")
+        
