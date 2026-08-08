@@ -68,4 +68,13 @@ def select_category():
 
     prompts.append(prompt)
     print("프롬프트가 추가되었습니다.")
-           
+   def show_list():
+    if not prompts:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    print("\n=== 프롬프트 목록 ===")
+    for i, prompt in enumerate(prompts, start=1):
+        star = "⭐" if prompt["favorite"] else ""
+        print(f"{i}. [{prompt['category']}] {prompt['title']} {star}")
+                
