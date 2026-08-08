@@ -30,3 +30,28 @@ def show_menu():
     print("6. 즐겨찾기 추가/해제")
     print("7. 즐겨찾기 목록 보기")
     print("0. 종료")
+    def input_non_empty(message):
+    while True:
+        value = input(message).strip()
+        if value:
+            return value
+        print("빈 값은 입력할 수 없습니다. 다시 입력하세요.")
+def select_category():
+    print("\n카테고리 목록")
+    for i, category in enumerate(CATEGORIES, start=1):
+        print(f"{i}. {category}")
+    print("0. 직접 입력")
+
+    while True:
+        choice = input("카테고리 번호를 선택하세요: ").strip()
+
+        if choice == "0":
+            return input_non_empty("직접 입력할 카테고리명: ")
+
+        if choice.isdigit():
+            index = int(choice) - 1
+            if 0 <= index < len(CATEGORIES):
+                return CATEGORIES[index]
+
+        print("올바른 번호를 입력하세요.")
+        
