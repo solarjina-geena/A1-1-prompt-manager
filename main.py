@@ -54,4 +54,18 @@ def select_category():
                 return CATEGORIES[index]
 
         print("올바른 번호를 입력하세요.")
-        
+ def add_prompt():
+    title = input_non_empty("제목: ")
+    content = input_non_empty("내용: ")
+    category = select_category()
+
+    prompt = {
+        "title": title,
+        "content": content,
+        "category": category,
+        "favorite": False
+    }
+
+    prompts.append(prompt)
+    print("프롬프트가 추가되었습니다.")
+           
