@@ -283,4 +283,29 @@ def search_prompts():
     for i, prompt in enumerate(results, start=1):
         star = "⭐" if prompt["favorite"] else ""
         print(f"{i}. [{prompt['category']}] {prompt['title']} {star}")
+    def show_prompt_detail():
+    if not prompts:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    show_list()
+    choice = input("상세 보기할 번호를 입력하세요: ").strip()
+
+    if not choice.isdigit():
+        print("숫자를 입력해주세요.")
+        return
+
+    index = int(choice) - 1
+
+    if index < 0 or index >= len(prompts):
+        print("올바른 번호를 입력하세요.")
+        return
+
+    prompt = prompts[index]
+
+    print("\n=== 프롬프트 상세 보기 ===")
+    print(f"제목: {prompt['title']}")
+    print(f"카테고리: {prompt['category']}")
+    print(f"내용: {prompt['content']}")
+    print(f"즐겨찾기: {'예' if prompt['favorite'] else '아니오'}")
                 
