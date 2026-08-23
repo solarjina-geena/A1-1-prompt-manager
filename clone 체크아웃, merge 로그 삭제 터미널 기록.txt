@@ -1,0 +1,88 @@
+PS D:\코디세이\LEVEL2 활용> git checkout main
+fatal: not a git repository (or any of the parent directories): .git
+PS D:\코디세이\LEVEL2 활용> pwd
+
+Path                   
+----                   
+D:\코디세이\LEVEL2 활용
+
+
+PS D:\코디세이\LEVEL2 활용> ls
+
+
+    디렉터리: D:\코디세이\LEVEL2 활용
+
+
+Mode                 LastWriteTime Leng
+                                     th
+----                 ------------- ----
+d-----      2026-08-08   오후 7:47     
+d-----      2026-08-08   오후 7:48     
+d-----      2026-08-08   오후 3:38     
+-a----      2026-08-08   오후 3:55   68
+-a----      2026-08-08   오후 3:58  441
+
+
+PS D:\코디세이\LEVEL2 활용> git checkout main
+fatal: not a git repository (or any of the parent directories): .git
+PS D:\코디세이\LEVEL2 활용> cd A1-1-clone
+PS D:\코디세이\LEVEL2 활용\A1-1-clone> git checkout main
+Updating files: 100% (2/2), done.
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS D:\코디세이\LEVEL2 활용\A1-1-clone> pwd
+
+Path                              
+----                              
+D:\코디세이\LEVEL2 활용\A1-1-clone
+
+
+PS D:\코디세이\LEVEL2 활용\A1-1-clone> git branch
+  copy-branch
+* main
+PS D:\코디세이\LEVEL2 활용\A1-1-clone> git merge copy-branch
+Updating 69e119f..30e53d2
+Fast-forward
+ memo.txt  | Bin 0 -> 38 bytes
+ memo2.txt | Bin 0 -> 38 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 memo.txt
+ create mode 100644 memo2.txt
+PS D:\코디세이\LEVEL2 활용\A1-1-clone> git log --oneline --graph
+* 30e53d2 (HEAD -> main, copy-branch) copy-branch: 두 번째 메모 파일 추가
+* 7258eff copy-branch: 첫 번째 메모 파일 추가
+* 69e119f (origin/main, origin/HEAD) Update README.md
+* e35187d Update README.md
+* 43fe2bd Add files via upload
+* 5f67866 Add files via upload
+* 10c299c Update README.md
+* c6cff66 Update README.md
+* fed1aa8 Add files via upload
+* 91d9f95 docs: 프로젝트 README 작성
+* 792de6d refactor: 함수 배치와 코드 형
+식 정리
+* e898098 feat: 조회수 기준 인기 프롬프
+트 목록 구현
+* 86568ef feat: 프롬프트 삭제 기능 구현
+* 859aecb feat: 프롬프트 수정 기능 구현
+* 7e6a0d4 feat: 즐겨찾기 목록 조회 기능 구현
+* 44d990c feat: 즐겨찾기 추가 및 해제 기능 구현
+* 31d5703 feat: 프롬프트 상세 보기와 조
+회수 기록 구현
+* 23207c5 feat: 프롬프트 검색 기능 구현
+* 9a233ba feat: 카테고리별 프롬프트 조회 기능 구현
+* 3b71dd0 feat: 프롬프트 추가 기능 구현
+*   468fa22 merge: 프롬프트 목록 기능 병합
+|\  
+| * 3d79ef2 (origin/feature/prompt-list) feat: 프롬프트 목록 기능 구현
+|/  
+* c638ce6 feat: 기본 프롬프트 데이터 추
+가
+* 47b6aa5 feat: 기본 메뉴와 종료 기능 구현
+* 637cfa8 chore: VSCode 설정 폴더 제외
+* c060801 chore: 프로젝트 초기 설정    # copy-branch 삭제
+>> git branch -d copy-branch1-1-clone> 
+Deleted branch copy-branch (was 30e53d2).
+PS D:\코디세이\LEVEL2 활용\A1-1-clone> git branch
+* main
+PS D:\코디세이\LEVEL2 활용\A1-1-clone> git branchgit branch
